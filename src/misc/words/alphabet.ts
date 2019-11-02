@@ -12,7 +12,7 @@ const alphabet: Group = {
     'golf',
     'hotel',
     'india',
-    'juliet',
+    'juliett',
     'kilo',
     'lima',
     'mike',
