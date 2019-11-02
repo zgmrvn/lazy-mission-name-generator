@@ -61,7 +61,10 @@
     </div>
 
     <!-- generated names -->
-    <div class="mt-16 -mb-1">
+    <div
+      v-show="missionNames.length > 0"
+      class="mt-16 -mb-1"
+    >
       <input
         v-for="(missionName, index) of missionNames"
         :key="index"
@@ -70,6 +73,18 @@
         @focus="$event.target.select()"
       >
     </div>
+
+    <!-- source -->
+    <p class="text-center text-xs text-gray-500 hover:underline mt-16">
+      <a
+        href="https://github.com/zgmrvn/lazy-mission-name-generator"
+        target="_blank"
+        rel="noopener"
+      >
+        <fontAwesomeIcon :icon="['fab', 'github']" />
+        source code
+      </a>
+    </p>
   </div>
 </template>
 
