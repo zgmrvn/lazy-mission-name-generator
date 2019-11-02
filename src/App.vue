@@ -63,7 +63,7 @@
         v-for="(missionName, index) of missionNames"
         :key="index"
         :value="missionName"
-        class="w-full bg-gray-100 rounded border border-gray-200 mb-1 px-2 py-1"
+        class="w-full text-center text-lg bg-gray-100 rounded border border-gray-200 outline-none mb-1 px-2 py-1"
         @focus="$event.target.select()"
       >
     </div>
