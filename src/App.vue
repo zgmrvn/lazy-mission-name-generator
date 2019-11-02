@@ -59,6 +59,7 @@
         :key="index"
         :value="missionName"
         class="w-full bg-gray-100 rounded border border-gray-200 mb-1 px-2 py-1"
+        @focus="$event.target.select()"
       >
     </div>
   </div>
