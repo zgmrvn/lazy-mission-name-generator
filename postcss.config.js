@@ -13,7 +13,8 @@ if (process.env.NODE_ENV === 'production') {
       content: [
         './src/**/*.vue'
       ],
-      whitelist: ['html', 'body']
+      whitelist: ['html', 'body'],
+      defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
     })
   )
 }
