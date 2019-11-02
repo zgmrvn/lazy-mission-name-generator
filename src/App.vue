@@ -29,14 +29,14 @@
           <div class="flex bg-gray-300">
             <button
               @click="removeGenerator"
-              class="flex-1 hover:bg-gray-400 font-semibold border-r border-gray-400 px-2 py-1"
+              class="flex-1 hover:bg-gray-400 font-bold text-gray-700 border-r border-gray-400 px-2 py-1"
             >
               -
             </button>
 
             <button
               @click="addGenerator"
-              class="flex-1 hover:bg-gray-400 font-semibold px-2 py-1"
+              class="flex-1 hover:bg-gray-400 font-bold text-gray-700 px-2 py-1"
             >
               +
             </button>
