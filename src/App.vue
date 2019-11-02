@@ -44,7 +44,12 @@
 
           <button
             @click="generate"
-            class="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-3 py-2"
+            class="bg-gray-500 text-white font-semibold px-3 py-2"
+            :class="{
+              'hover:bg-gray-400': generators.length > 0,
+              'cursor-not-allowed': generators.length === 0
+            }"
+            :disabled="generators.length === 0"
           >
             generate
           </button>
@@ -79,11 +84,11 @@ export default class App extends Vue {
     generators: Generator[]
   }
 
-  private missionNames: string[] = []
   private generators: string[] = []
+  private missionNames: string[] = []
 
   private addGenerator() {
-    this.generators.push('d')
+    this.generators.push(this.generators.length.toString())
   }
 
   private removeGenerator() {
