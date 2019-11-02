@@ -8,7 +8,7 @@
       <h1 class="text-3xl text-gray-900">
         Lazy Mission Name Generator
       </h1>
-      <h2 class="text-lg text-gray-600">
+      <h2 class="text-lg text-teal-400">
         as lazy as you
       </h2>
     </div>
@@ -22,25 +22,31 @@
       <div class="inline-flex rounded shadow-md">
         <button
           @click="removeGenerator"
-          class="bg-gray-500 hover:bg-gray-600 font-bold text-gray-700 rounded-l border-r border-gray-400 px-3 py-1"
+          class="font-bold text-gray-700 rounded-l border-r border-white px-4 py-1 transition-bg-200"
+          :class="{
+            'bg-gray-300': generators.length === 0,
+            'bg-gray-400': generators.length > 0,
+            'hover:bg-gray-500': generators.length > 0,
+            'cursor-not-allowed': generators.length === 0
+          }"
         >
           -
         </button>
 
         <button
           @click="addGenerator"
-          class="bg-gray-500 hover:bg-gray-600 font-bold text-gray-700 border-r border-gray-400 px-3 py-1"
+          class="bg-gray-400 hover:bg-gray-500 font-bold text-gray-700 border-r border-white px-4 py-1 transition-bg-200"
         >
           +
         </button>
 
         <button
           @click="generate"
-          class="text-white font-semibold rounded-r px-3 py-1"
+          class="text-white font-semibold rounded-r px-4 py-1 transition-bg-200"
           :class="{
-            'bg-gray-500': generators.length === 0,
-            'bg-gray-600': generators.length > 0,
-            'hover:bg-gray-500': generators.length > 0,
+            'bg-teal-300': generators.length === 0,
+            'bg-teal-400': generators.length > 0,
+            'hover:bg-teal-500': generators.length > 0,
             'cursor-not-allowed': generators.length === 0
           }"
           :disabled="generators.length === 0"
@@ -56,14 +62,14 @@
       class="mt-8"
     >
       <div class="flex justify-center items-center flex-wrap -m-1">
-      <div
-        v-for="(generator, index) of generators"
-        :key="index"
-        class="p-1 w-1/2 sm:w-32"
-      >
-        <Generator ref="generators" />
+        <div
+          v-for="(generator, index) of generators"
+          :key="index"
+          class="p-1 w-1/2 sm:w-32"
+        >
+          <Generator ref="generators" />
+        </div>
       </div>
-    </div>
     </div>
 
     <!-- generated names -->
@@ -72,14 +78,14 @@
       class="mt-16"
     >
       <div class="-mb-1">
-      <input
-        v-for="(missionName, index) of missionNames"
-        :key="index"
-        :value="missionName"
+        <input
+          v-for="(missionName, index) of missionNames"
+          :key="index"
+          :value="missionName"
           class="w-full text-center text-lg font-semibold text-gray-800 bg-gray-100 rounded border border-gray-200 outline-none mb-1 px-2 py-1"
-        @focus="$event.target.select()"
-      >
-    </div>
+          @focus="$event.target.select()"
+        >
+      </div>
     </div>
 
     <!-- source -->

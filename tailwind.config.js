@@ -487,5 +487,15 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.transition-bg-200': {
+          transition: 'background-color 200ms ease',
+        }
+      }
+
+      addUtilities(newUtilities)
+    }
+  ]
 }
