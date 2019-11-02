@@ -53,8 +53,9 @@
     <!-- generators -->
     <div
       v-show="generators.length > 0"
-      class="flex justify-center items-center flex-wrap mt-8 -m-1"
+      class="mt-8"
     >
+      <div class="flex justify-center items-center flex-wrap -m-1">
       <div
         v-for="(generator, index) of generators"
         :key="index"
@@ -63,12 +64,14 @@
         <Generator ref="generators" />
       </div>
     </div>
+    </div>
 
     <!-- generated names -->
     <div
       v-show="missionNames.length > 0"
-      class="mt-16 -mb-1"
+      class="mt-16"
     >
+      <div class="-mb-1">
       <input
         v-for="(missionName, index) of missionNames"
         :key="index"
@@ -76,6 +79,7 @@
         class="w-full text-center text-lg bg-gray-100 rounded border border-gray-200 outline-none mb-1 px-2 py-1"
         @focus="$event.target.select()"
       >
+    </div>
     </div>
 
     <!-- source -->
