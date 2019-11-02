@@ -12,12 +12,15 @@ const vehicles: Group = {
     'crane',
     'helicopter',
     'motorcycle',
+    'pick-up',
+    'roller',
     'scooter',
     'skateboard',
     'subway',
     'taxi',
     'tractor',
     'train',
+    'truck',
     'van'
   ]
 }

@@ -13,12 +13,19 @@ const fruits: Group = {
     'cucumber',
     'date',
     'fig',
+    'guava',
+    'lemon',
+    'lychee',
     'mandarin',
     'mango',
     'melon',
     'nectarine',
     'olive',
     'orange',
+    'papaya',
+    'peach',
+    'pineapple',
+    'raisin',
     'tomato'
   ]
 }
