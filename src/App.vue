@@ -14,6 +14,10 @@
     </div>
 
     <!-- buttons -->
+    <p class="text-center text-sm text-gray-600 mb-1">
+      Add one or more generators.
+    </p>
+
     <div class="flex justify-center">
       <div class="inline-flex rounded shadow-md">
         <button
