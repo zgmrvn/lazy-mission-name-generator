@@ -4,7 +4,7 @@ const months: Group = {
   name: 'months',
   words: [
     'january',
-    'feruary',
+    'february',
     'march',
     'april',
     'may',
