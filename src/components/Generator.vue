@@ -29,7 +29,9 @@ export default class Generator extends Vue {
   constructor() {
     super()
 
-    this.selectedGroups = groups.map(g => g.name)
+    const availableGroups: string[] = groups.map(g => g.name)
+
+    this.selectedGroups = [availableGroups[Math.floor(Math.random() * availableGroups.length)]]
   }
 
   get groups(): Group[] {
