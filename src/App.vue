@@ -22,10 +22,8 @@
       <div class="inline-flex rounded shadow-md">
         <button
           @click="removeGenerator"
-          class="font-bold text-gray-700 rounded-l border-r border-white px-4 py-1 transition-bg-200"
+          class="bg-gray-400 font-bold text-gray-700 rounded-l border-r border-white px-4 py-1 transition-bg-200"
           :class="{
-            'bg-gray-300': generators.length === 0,
-            'bg-gray-400': generators.length > 0,
             'hover:bg-gray-500': generators.length > 0,
             'cursor-not-allowed': generators.length === 0
           }"
@@ -42,10 +40,8 @@
 
         <button
           @click="generate"
-          class="text-white font-semibold rounded-r px-4 py-1 transition-bg-200"
+          class="bg-teal-400 text-white font-semibold rounded-r px-4 py-1 transition-bg-200"
           :class="{
-            'bg-teal-300': generators.length === 0,
-            'bg-teal-400': generators.length > 0,
             'hover:bg-teal-500': generators.length > 0,
             'cursor-not-allowed': generators.length === 0
           }"
