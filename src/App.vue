@@ -117,11 +117,11 @@ export default class App extends Vue {
   private generators: string[] = []
   private missionNames: string[] = []
 
-  private addGenerator() {
+  private addGenerator(): void {
     this.generators.push(this.generators.length.toString())
   }
 
-  private removeGenerator() {
+  private removeGenerator(): void {
     this.generators.pop()
   }
 
