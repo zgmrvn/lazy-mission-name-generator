@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import groups from '@/misc/words'
+import groups from '@/misc/words/index'
 import { Group } from '@/interfaces/Group'
 
 @Component
