@@ -1,29 +1,100 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div
+    id="app"
+    class="container mx-auto px-4 py-8"
+  >
+    <!-- title -->
+    <div class="text-center mb-16 leading-tight">
+      <h1 class="text-3xl text-gray-900">
+        Lazy Mission Name Generator
+      </h1>
+      <h2 class="text-lg text-gray-600">
+        as lazy as you
+      </h2>
+    </div>
+
+    <!-- generators -->
+    <div class="flex justify-center items-center flex-wrap -mx-1 mb-16">
+      <div
+        v-for="(generator, index) of generators"
+        :key="index"
+        class="px-1"
+      >
+        <Generator ref="generators" />
+      </div>
+
+      <!-- buttons -->
+      <div class="px-1">
+        <div class="rounded overflow-hidden shadow-md">
+          <div class="flex bg-gray-300">
+            <button
+              @click="removeGenerator"
+              class="flex-1 hover:bg-gray-400 font-semibold border-r border-gray-400 px-2 py-1"
+            >
+              -
+            </button>
+
+            <button
+              @click="addGenerator"
+              class="flex-1 hover:bg-gray-400 font-semibold px-2 py-1"
+            >
+              +
+            </button>
+          </div>
+
+          <button
+            @click="generate"
+            class="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-3 py-2"
+          >
+            generate
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- generated names -->
+    <div class="xl:w-1/2 mx-auto -mb-1">
+      <input
+        v-for="(missionName, index) of missionNames"
+        :key="index"
+        :value="missionName"
+        class="w-full bg-gray-100 rounded border border-gray-200 mb-1 px-2 py-1"
+      >
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from './components/HelloWorld.vue'
+import Generator from '@/components/Generator.vue'
 
 @Component({
   components: {
-    HelloWorld
+    Generator
   }
 })
-export default class App extends Vue {}
-</script>
+export default class App extends Vue {
+  $refs!: {
+    generators: Generator[]
+  }
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  private missionNames: string[] = []
+  private generators: string[] = []
+
+  private addGenerator() {
+    this.generators.push('d')
+  }
+
+  private removeGenerator() {
+    this.generators.pop()
+  }
+
+  private generate(): void {
+    this.missionNames = []
+
+    for (let i = 0; i < 10; i++) {
+      this.missionNames.push(this.$refs.generators.map(g => g.select()).join(' '))
+    }
+  }
 }
-</style>
+</script>
