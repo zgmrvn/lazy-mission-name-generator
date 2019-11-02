@@ -12,9 +12,10 @@ if (process.env.NODE_ENV === "production") {
     purgecss({
       content: [
         "./src/**/*.vue"
-      ]
+      ],
+      whitelist: ["html", "body"]
     })
-  );
+  )
 }
 
 module.exports = { plugins }
