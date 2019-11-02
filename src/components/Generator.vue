@@ -1,10 +1,10 @@
 <template>
-  <div class="w-32 bg-gray-100 rounded shadow-md px-2 py-1">
+  <div class="bg-gray-600 rounded shadow-md px-2 py-1">
     <div
       v-for="(group, index) in groups"
       :key="index"
     >
-      <label class="text-sm">
+      <label class="text-sm text-white">
         <input
           v-model="selectedGroups"
           type="checkbox"

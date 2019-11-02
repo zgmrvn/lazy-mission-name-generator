@@ -13,52 +13,55 @@
       </h2>
     </div>
 
+    <!-- buttons -->
+    <div class="flex justify-center">
+      <div class="inline-flex rounded shadow-md">
+        <button
+          @click="removeGenerator"
+          class="bg-gray-500 hover:bg-gray-600 font-bold text-gray-700 rounded-l border-r border-gray-400 px-3 py-1"
+        >
+          -
+        </button>
+
+        <button
+          @click="addGenerator"
+          class="bg-gray-500 hover:bg-gray-600 font-bold text-gray-700 border-r border-gray-400 px-3 py-1"
+        >
+          +
+        </button>
+
+        <button
+          @click="generate"
+          class="text-white font-semibold rounded-r px-3 py-1"
+          :class="{
+            'bg-gray-500': generators.length === 0,
+            'bg-gray-600': generators.length > 0,
+            'hover:bg-gray-500': generators.length > 0,
+            'cursor-not-allowed': generators.length === 0
+          }"
+          :disabled="generators.length === 0"
+        >
+          generate
+        </button>
+      </div>
+    </div>
+
     <!-- generators -->
-    <div class="flex justify-center items-center flex-wrap -mx-1 mb-16">
+    <div
+      v-show="generators.length > 0"
+      class="flex justify-center items-center flex-wrap mt-8 -m-1"
+    >
       <div
         v-for="(generator, index) of generators"
         :key="index"
-        class="px-1"
+        class="p-1 w-1/2 sm:w-32"
       >
         <Generator ref="generators" />
-      </div>
-
-      <!-- buttons -->
-      <div class="px-1">
-        <div class="rounded overflow-hidden shadow-md">
-          <div class="flex bg-gray-300">
-            <button
-              @click="removeGenerator"
-              class="flex-1 hover:bg-gray-400 font-bold text-gray-700 border-r border-gray-400 px-2 py-1"
-            >
-              -
-            </button>
-
-            <button
-              @click="addGenerator"
-              class="flex-1 hover:bg-gray-400 font-bold text-gray-700 px-2 py-1"
-            >
-              +
-            </button>
-          </div>
-
-          <button
-            @click="generate"
-            class="bg-gray-500 text-white font-semibold px-3 py-2"
-            :class="{
-              'hover:bg-gray-400': generators.length > 0,
-              'cursor-not-allowed': generators.length === 0
-            }"
-            :disabled="generators.length === 0"
-          >
-            generate
-          </button>
-        </div>
       </div>
     </div>
 
     <!-- generated names -->
-    <div class="xl:w-1/2 mx-auto -mb-1">
+    <div class="mt-16 -mb-1">
       <input
         v-for="(missionName, index) of missionNames"
         :key="index"
