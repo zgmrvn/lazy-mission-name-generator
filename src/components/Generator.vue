@@ -38,15 +38,12 @@ export default class Generator extends Vue {
     return groups
   }
 
-  get selectedWords(): string[] {
-    const result: string[] = []
-    const selectedGroups: string[][] = groups.filter(g => this.selectedGroups.includes(g.name)).map(g => g.words)
-
-    return result.concat.apply([], selectedGroups)
-  }
-
   select(): string {
-    return this.selectedWords[Math.floor(Math.random() * this.selectedWords.length)]
+    const selectedGroups: Group[] = groups.filter(g => this.selectedGroups.includes(g.name))
+    const group: Group = selectedGroups[Math.floor(Math.random() * selectedGroups.length)]
+    const word: string = group.words[Math.floor(Math.random() * group.words.length)]
+
+    return word
   }
 }
 </script>
