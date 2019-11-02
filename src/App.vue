@@ -85,11 +85,13 @@
     </div>
 
     <!-- source -->
-    <p class="text-center text-xs text-gray-500 hover:underline mt-16">
+    <p class="text-center text-xs text-gray-500 mt-16">
+      zgmrvn -
       <a
         href="https://github.com/zgmrvn/lazy-mission-name-generator"
         target="_blank"
         rel="noopener"
+        class="hover:underline"
       >
         <fontAwesomeIcon :icon="['fab', 'github']" />
         source code
